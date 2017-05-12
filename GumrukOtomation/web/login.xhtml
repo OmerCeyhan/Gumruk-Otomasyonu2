@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f ="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+
+        <title>Giriş Sayfası</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="resources/style.css" type="text/css" />
+    </h:head>
+    <h:body>
+        <nav role='navigation'>
+            <center>
+                <ul>
+                    <li><a href="home.xhtml">Anasayfa</a></li>
+                    <li><a href="login.xhtml">Login</a></li> 
+                    
+                </ul>
+            </center>
+        </nav>  
+        <div class="icerik">
+            <center>  
+             <h:form style="border: 3px solid gray">
+                 
+                <br/>
+                <br/>
+            <h:panelGrid id="panel" columns="3">
+                <f:facet name="header">
+                    <h:outputText value="Sisteme Giriş" style="font-size: 20px"/>
+                </f:facet>
+                <br/> <br/> <br/>
+                <hr/>
+                <h:outputLabel value="Kullanıcı Adı:" />
+                <h:inputText class="txtbox2" id="usernameInputText" required="true" requiredMessage="Lütfen Kullanıcı Adınızı Giriniz !" value="#{loginBean.username}" validatorMessage="Kullanıcı Adı Minimum 5 Maksimum 10 karakterli olmalıdır" >
+                    <f:validateLength maximum="10" minimum="5" />
+                </h:inputText>
+                <h:message for="usernameInputText" />
+                
+                <h:outputLabel value="Şifre:" />
+                <h:inputSecret class="txtbox2" id="passwordInputSecret" required="true" requiredMessage="Lütfen Şifrenizi Giriniz !" value="#{loginBean.password}" validatorMessage="Şifreniz Minimum 6 karakterli olmalıdır" >
+                    <f:validateLength minimum="6" />
+                </h:inputSecret>
+                <h:message for="passwordInputSecret" />
+                
+                
+                <br/>
+                <br/>
+                <br/>
+                <center><h:commandButton class="btn btn-text-dark-grey" value="Sisteme Giriş" action="#{loginBean.loginProject}" /><br/></center>
+               
+            </h:panelGrid>
+        </h:form>
+                
+            </center>
+        </div>
+    </h:body>
+</html>

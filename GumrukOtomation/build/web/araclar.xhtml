@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f ="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    
+    <h:head>
+
+        <title>Gümrük Otomasyonu</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="resources/style.css" type="text/css" />
+    </h:head>
+    <h:body>
+        <nav role='navigation'>
+            <center>
+                <ul>
+                    <li><a href="index.xhtml">Anasayfa</a></li>
+                    <li><a href="araclar.xhtml">Araç Bilgileri</a>
+                    </li>
+                    <li><a href="#">Kayıt Ekleme</a>
+                        <ul>
+                            <li><a href="giriscikisekleme.xhtml">Giriş-Çıkış Kaydı Ekleme</a></li>
+                            <li><a href="ihbarekleme.xhtml">İhbar Kaydı Ekleme</a></li>
+                        </ul>
+                    </li>
+                   <li><a href="#">Kayıt Sorgulama</a>
+                        <ul>
+                            <li><a href="giriscikissorgu.xhtml">Giriş-Çıkış Kaydı</a></li>
+                            <li><a href="ihbarsorgu.xhtml">İhbar Kaydı</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Personel Modülü</a>
+                        <ul>
+                            <li><a href="personelekle.xhtml">Personel Ekle</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </center>
+        </nav>  
+        
+        <div class="icerik">
+            <h:form>
+                
+                <center>
+                    <br/>
+                    <p>Plâka Giriniz: </p><br/>
+                    <h:inputText class="txtbox" id="aracBilgiSorgula" value=""/> <br/><br/>
+                    <h:commandButton class="btn btn-text-dark-grey" value="Sorgula" type="submit" action="giriscikis"/>
+                </center>
+            </h:form>
+            <center>
+            <h:dataTable class="dtable" value="#{arac.findArac()}" var="aracs">
+                <h:column>
+                    <center>
+                    <f:facet class="omer" name="header">|---Plaka---|</f:facet>
+                        #{aracs.plaka}
+                    </center>
+                </h:column>
+                
+                <h:column>
+                    <center>
+                    <f:facet name="header">---Arac---|</f:facet>
+                        #{aracs.Arac_Cinsi}
+                    </center>
+
+                </h:column>
+                <h:column>
+                    <center>
+                    <f:facet  name="header">---Ulkesi---|</f:facet>
+                        #{aracs.ulkesi}
+                    </center>
+                </h:column>
+                <h:column>
+                    <center>
+                    <f:facet  name="header">---Firma---|</f:facet>
+                        #{aracs.firma}
+                    </center>
+                </h:column>
+                <h:column>
+                    <center>
+                    <f:facet name="header">---Model---|</f:facet>
+                        #{aracs.model}
+                    </center>
+                </h:column>
+            </h:dataTable></center>
+        </div>
+        
+    </h:body>
+</html>
+

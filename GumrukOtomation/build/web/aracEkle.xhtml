@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+
+        <title>Gümrük Otomasyonu</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="resources/style.css" type="text/css" />
+    </h:head>
+    <h:body>
+        <nav role='navigation'>
+            <center>
+                <ul>
+                    <li><a href="#">Anasayfa</a></li>
+                    <li><a href="araclar.xhtml">Araçlar</a>
+                        <ul>
+                            <li><a href="aracbilgi.xhtml">Araç Bilgileri</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="kayitekleme.xhtml">Kayıt Ekleme</a>
+                        <ul>
+                            <li><a href="giriscikisekleme.xhtml">Giriş-Çıkış Kaydı Ekleme</a></li>
+                            <li><a href="ihbarekleme.xhtml">İhbar Kaydı Ekleme</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="kayitsorgu.xhtml">Kayıt Sorgulama</a>
+                        <ul>
+                            <li><a href="giriscikissorgu.xhtml">Giriş-Çıkış Kaydı</a></li>
+                            <li><a href="ihbarsorgu.xhtml">İhbar Kaydı</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="personel.xhtml">Personel Modülü</a>
+                    </li>
+                </ul>
+            </center>
+        </nav>  
+        <div class="icerik">
+            <h:form id="userForm">
+                <h:panelGrid id="panel" columns="2">
+                    <h:outputText value="Plaka"></h:outputText>
+                    <h:inputText id="plaka" value="#{arac.plaka}" required="true" requiredMessage="Plaka Giriniz" validatorMessage="30 Karakterden az olmalı">
+                        <f:validateLength maximum="30"/>
+                    </h:inputText>
+
+                    <h:outputText value="aracCinsi"></h:outputText>
+                    <h:inputText id="aracCinsi" value="#{arac.aracCinsi}" required="true" requiredMessage="Araç Cinsi Giriniz" validatorMessage="30 Karakterden az olmalı">
+                        <f:validateLength maximum="30"/>
+                    </h:inputText>
+
+                    <h:outputText value="ulkesi"></h:outputText>
+                    <h:inputText id="ulkesi" value="#{arac.ulkesi}" required="true" requiredMessage="Ülkesini Giriniz" />
+
+                    <h:outputText value="Firma"></h:outputText>
+                    <h:inputText id="firma" value="#{arac.firma}" required="true" requiredMessage="Aracın Firmasını Giriniz" validatorMessage="30 Karakterden az olmalı">
+                        <f:validateLength maximum="30"/>
+                    </h:inputText>
+
+                    <h:outputText value="Model"/>
+                    <h:inputText id="model" value="#{arac.model}" required="true" requiredMessage="Aracın Modelini Giriniz" validatorMessage="30 Karakterden az olmalı">
+                        <f:validateLength maximum="30"/>
+                    </h:inputText>
+
+                    <h:commandButton value="Kayıt ol" action="#{arac.aracEkle()}" />
+                </h:panelGrid>
+            </h:form>
+        </div>
+    </h:body>
+</html>

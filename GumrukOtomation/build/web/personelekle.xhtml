@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f ="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+
+        <title>Gümrük Otomasyonu</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="resources/style.css" type="text/css" />
+    </h:head>
+    <h:body>
+        <nav role='navigation'>
+            <center>
+                <ul>
+                    <li><a href="index.xhtml">Anasayfa</a></li>
+                    <li><a href="araclar.xhtml">Araç Bilgileri</a>
+                    </li>
+                    <li><a href="kayitekleme.xhtml">Kayıt Ekleme</a>
+                        <ul>
+                            <li><a href="giriscikisekleme.xhtml">Giriş-Çıkış Kaydı Ekle</a></li>
+                            <li><a href="ihbarekleme.xhtml">İhbar Kaydı Ekle</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Kayıt Sorgulama</a>
+                        <ul>
+                            <li><a href="giriscikissorgu.xhtml">Giriş-Çıkış Kaydı</a></li>
+                            <li><a href="ihbarsorgu.xhtml">İhbar Kaydı</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Personel Modülü</a>
+                        <ul>
+                            <li><a href="personelekle.xhtml">Personel Ekle</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="login.xhtml" style="float: right">Çıkış</a></li> 
+                </ul>
+            </center>
+        </nav>  
+        <div class="icerik">
+            <center>
+                <br> </br>
+                <center>Personel Kayıt</center>
+                <div><fieldset><h:form class="userForm"  style="border: 3px solid gray">
+                            <h:panelGrid columns="2">
+                                <h:outputText value="TC:"></h:outputText>
+                                <h:inputText class="txtbox2" id="Tc" value="#{personel.tcKimlik}" required="true">
+                                    <f:validateLength maximum="11"/>
+                                </h:inputText>
+                                    <h:outputText value="Kullanıcı Adı:"></h:outputText>
+                                    <h:inputText class="txtbox2" id="kullaniciadi" value="#{personel.kullaniciAdi}" required="true">
+
+                                    </h:inputText>
+                                    <h:outputText value="Şifre:"></h:outputText>
+                                    <h:inputText class="txtbox2" id="sifre" value="#{personel.sifre}" required="true">
+                                        <f:validateLength maximum="30"/>
+                                    </h:inputText>
+                                    
+                                    <h:outputText value="Personel Adı:"></h:outputText>
+                                    <h:inputText class="txtbox2" id="personeladi" value="#{personel.personelAdi}" required="true">
+                                        <f:validateLength maximum="30"/>
+                                                                            
+                                    </h:inputText>
+                                    <h:outputText value="Personel Soyadı:"></h:outputText>
+                                    <h:inputText class="txtbox2" id="personelsoyadi" value="#{personel.personelSoyadi}" required="true">
+                                       
+                                    </h:inputText>
+                                    <h:outputText value="Email:"></h:outputText>
+                                    <h:inputText class="txtbox2" id="email" value="#{personel.email}" required="true">
+                                       
+                                    </h:inputText>
+                                    <h:outputText value="Adres:"></h:outputText>
+                                    <h:inputText class="txtbox2" id="adress" value="#{personel.adres}" required="true">
+                                     </h:inputText>
+                                    <h:outputText value="Doğum Tarihi:"></h:outputText>
+                                    <h:inputText class="txtbox2" id="dogumtarihi" value="#{personel.dogumTarihi}" required="true">
+                                        <f:validateLength maximum="30"/>
+                                    </h:inputText>
+                                    <h:outputText value="Cinsiyet:"></h:outputText>
+                                    <h:inputText class="txtbox2" id="cinsiyet" value="#{personel.cinsiyet}" required="true">
+                                        <f:validateLength maximum="30"/>
+                                    </h:inputText>
+                                    
+                                    <h:outputText value="Personel Türü:"></h:outputText>
+                                    <h:inputText class="txtbox2" id="personelturu" value="#{personel.personelTuru}" required="true">
+                                        <f:validateLength maximum="30"/>
+                                    </h:inputText>
+                                    
+                                    <h:outputText value="Telefon:"></h:outputText>
+                                    <h:inputText class="txtbox2" id="telefon" value="#{personel.telefon}" required="true">
+                                        <f:validateLength maximum="30"/>
+                                    </h:inputText>
+                                   
+
+
+                            </h:panelGrid>
+                            <center><h:commandButton class="btn btn-text-dark-gray" value="Kayıt İçin Tıklayın" action="#{personel.personelEkle()}" ></h:commandButton></center>
+                        </h:form> </fieldset> </div>
+            </center>
+            <br> </br>
+
+        </div>
+    </h:body>
+</html>

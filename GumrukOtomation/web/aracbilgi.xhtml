@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f ="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    
+    <h:head>
+
+        <title>Gümrük Otomasyonu</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="resources/style.css" type="text/css" />
+    </h:head>
+    <h:body>
+        <nav role='navigation'>
+            <center>
+                <ul>
+                    <li><a href="index.xhtml">Anasayfa</a></li>
+                    
+                    <li><a href="araclar.xhtml">Araç Bilgileri</a>
+                    </li>
+                    <li><a href="#">Kayıt Ekleme</a>
+                        <ul>
+                            <li><a href="giriscikisekleme.xhtml">Giriş-Çıkış Kaydı Ekleme</a></li>
+                            <li><a href="ihbarekleme.xhtml">İhbar Kaydı Ekleme</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Kayıt Sorgulama</a>
+                        <ul>
+                            <li><a href="giriscikissorgu.xhtml">Giriş-Çıkış Kaydı</a></li>
+                            <li><a href="ihbarsorgu.xhtml">İhbar Kaydı</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Personel Modülü</a>
+                        <ul>
+                            <li><a href="personelekle.xhtml">Personel Ekle</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="login.xhtml" style="float: right">Çıkış</a></li> 
+                </ul>
+            </center>
+        </nav>  
+        
+        <div class="icerik">
+            <h:form>
+                
+                <center>
+                    <br/>
+                    <p>Plâka Giriniz: </p><br/>
+                    <h:inputText class="txtbox" id="aracBilgiSorgula" value="#{arac.plaka}"/> <br/><br/>
+                    <h:commandButton class="btn btn-text-dark-grey" value="Sorgula" type="submit" action="araclar?faces-redirect=true"/>
+                </center>
+            </h:form>
+        </div>
+        
+    </h:body>
+</html>
+                

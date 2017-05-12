@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f ="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+
+        <title>Gümrük Otomasyonu</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="resources/style.css" type="text/css" />
+    </h:head>
+    <h:body>
+        <nav role='navigation'>
+            <center>
+                <ul>
+                    <li><a href="index.xhtml">Anasayfa</a></li>
+                    <li><a href="araclar.xhtml">Araç Bilgileri</a>
+                    </li>
+                    <li><a href="#">Kayıt Ekleme</a>
+                        <ul>
+                            <li><a href="#">Giriş-Çıkış Kaydı Ekleme</a></li>
+                            <li><a href="ihbarekleme.xhtml">İhbar Kaydı Ekleme</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Kayıt Sorgulama</a>
+                        <ul>
+                            <li><a href="giriscikissorgu.xhtml">Giriş-Çıkış Kaydı</a></li>
+                            <li><a href="ihbarsorgu.xhtml">İhbar Kaydı</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Personel Modülü</a>
+                        <ul>
+                            <li><a href="personelekle.xhtml">Personel Ekle</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="login.xhtml" style="float: right">Çıkış</a></li> 
+                </ul>
+            </center>
+        </nav>  
+        <div class="icerik">
+            
+            <center>
+                <h:form class="userForm" style="border: 3px solid gray"> <br/>
+                    <b>Giriş Çıkış Bilgileri</b><br/><br/>
+                        <h:panelGrid columns="4">
+                            <h:outputText value="Giriş Zamanı:"></h:outputText>
+                            <h:inputText class="txtbox2" id="giriszamani" value="#{tasima.girisZamani}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+                            <h:outputText value="Geldiği Yer:"></h:outputText>
+                            <h:inputText class="txtbox2" id="geldigiyer" value="#{tasima.geldigiYer}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText> 
+                            
+                            <h:outputText value="Çıkış Zamanı:"></h:outputText>
+                            <h:inputText class="txtbox2" id="cikiszamani" value="#{tasima.cikisZamani}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+                            <h:outputText value="Gideceği Yer:"></h:outputText>
+                            <h:inputText class="txtbox2" id="gidecegiyer" value="#{tasima.gidecegiYer}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+                        
+                 
+                        
+                            <h:outputText value="Aracın Cinsi:"></h:outputText>
+                            <h:inputText class="txtbox2" id="araccinsi" value="#{arac.aracCinsi}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+                            
+                            <h:outputText value="Ülkesi:"></h:outputText>
+                            <h:inputText class="txtbox2" id="ulke" value="#{arac.ulkesi}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+                            
+                            <h:outputText value="Plakası:"></h:outputText>
+                            <h:inputText class="txtbox2" id="plaka" value="#{arac.plaka}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+                            
+                            <h:outputText value="Firma:"></h:outputText>
+                            <h:inputText class="txtbox2" id="firma" value="#{arac.firma}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+                            
+                            <h:outputText value="Model:"></h:outputText>
+                            <h:inputText class="txtbox2" id="model" value="#{arac.model}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+             
+                
+                        
+                            <h:outputText value="Adı:"></h:outputText>
+                            <h:inputText class="txtbox2" id="adi" value="#{surucu.ad}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+                            <h:outputText value="Soyadı:"></h:outputText>
+                            <h:inputText class="txtbox2" id="soyadi" value="#{surucu.soyad}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+                            
+                            
+                            <h:outputText value="TC:"></h:outputText>
+                            <h:inputText class="txtbox2" id="personeltc" value="#{personel.tcKimlik}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+                            
+                            <h:outputText value="Pasaport No:"></h:outputText>
+                            <h:inputText class="txtbox2" id="pasaport" value="#{surucu.pasaportNo}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+                            <h:outputText value="Uyruk:"></h:outputText>
+                            <h:inputText class="txtbox2" id="uyruk" value="#{surucu.uyruk}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+                            
+                            
+                        
+                        
+                            <h:outputText value="Yük Cinsi:"></h:outputText>
+                            <h:inputText class="txtbox2" id="yukcinsi" value="#{tasima.yukCinsi}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+                            <h:outputText value="Yük Miktarı:"></h:outputText>
+                            <h:inputText class="txtbox2" id="yukmiktari" value="#{tasima.miktar}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+                            <h:outputText value="Ölçü Birimi:"></h:outputText>
+                            <h:inputText class="txtbox2" id="olcubirimi" value="#{tasima.olcuBirimi}" required="true">
+                                <f:validateLength maximum="30"/>
+                            </h:inputText>
+
+
+
+                        </h:panelGrid><br/><br/>
+                    <center> <h:commandButton class="btn btn-dark-grey" value="Kayıt İçin Tıklayın" action="#{eklecikar.topluEkleCikar()}" ></h:commandButton></center><br/>
+                    </h:form>  
+            <br> </br>
+        </center>
+        </div>
+    </h:body>
+</html>
