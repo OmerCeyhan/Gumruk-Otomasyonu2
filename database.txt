@@ -1,0 +1,65 @@
+CREATE TABLE ARAC (
+    Plaka VARCHAR(50) NOT NULL,
+    Arac_Cinsi VARCHAR(50) NOT NULL,
+    Ulkesi VARCHAR(50) NOT NULL,
+    Firma VARCHAR(50) NOT NULL,
+    Model VARCHAR(50) NOT NULL,
+    PRIMARY KEY (Plaka)
+);
+
+CREATE TABLE SURUCU (
+    Pasaport_No VARCHAR(50) NOT NULL,
+    Ad VARCHAR(50) NOT NULL,
+    Soyad VARCHAR(50) NOT NULL,
+    Uyruk VARCHAR(50) NOT NULL,
+    PRIMARY KEY (Pasaport_No)
+);
+
+CREATE TABLE PERSONEL (
+    TC VARCHAR(11) NOT NULL,
+    Kullanici_Adi VARCHAR(50) NOT NULL,
+    Sifre VARCHAR(50) NOT NULL,
+    Personel_Adi VARCHAR(50) NOT NULL,
+    Personel_Soyadi VARCHAR(50) NOT NULL,
+    Email VARCHAR(50) NOT NULL,
+    Adres VARCHAR(255) NOT NULL,
+    Dogum_Tarihi VARCHAR(50) NOT NULL,
+    Cinsiyet VARCHAR(5) NOT NULL,
+    Personel_Turu VARCHAR(7) NOT NULL,
+    Telefon VARCHAR(50) NOT NULL,
+    PRIMARY KEY (TC)
+);
+
+
+CREATE TABLE TASIMA (
+    Sira_No INT  NOT NULL auto_increment,
+    Plaka VARCHAR(50) NOT NULL,
+    Pasaport_No VARCHAR(50) NOT NULL,
+    Yuk_Cinsi VARCHAR(50) NOT NULL,
+    Miktar VARCHAR(50) NOT NULL,
+    Olcu_Birimi VARCHAR(50) NOT NULL,
+    Giris_Zamani VARCHAR(50) NOT NULL,
+    Cikis_Zamani VARCHAR(50) NOT NULL,
+    Geldigi_Yer VARCHAR(50) NOT NULL,
+    Gidecegi_Yer VARCHAR(50) NOT NULL,
+    Memur_TC VARCHAR(11) NOT NULL,
+    PRIMARY KEY (Sira_No),
+    FOREIGN KEY (Plaka) REFERENCES ARAC(Plaka),
+    FOREIGN KEY (Pasaport_No) REFERENCES SURUCU(Pasaport_No)
+);
+
+CREATE TABLE IHBAR (
+    Ihbar_No VARCHAR(50) NOT NULL,
+    Plaka VARCHAR(50) NOT NULL,
+    Ihbar_Sebebi VARCHAR(50) NOT NULL,
+    Ihbar_Tarihi VARCHAR(50) NOT NULL,
+    Ihbar_Sayisi INT NOT NULL,
+    PRIMARY KEY (Ihbar_No)
+    
+);
+
+CREATE TABLE Personel_GirisKontrol (
+    Kullanici_Adi VARCHAR(50) NOT NULL,
+    Tel VARCHAR(50) NOT NULL,
+    Giris_Zamani DATE NOT NULL
+);
