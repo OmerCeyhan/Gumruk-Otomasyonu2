@@ -10,19 +10,15 @@ import java.sql.Statement;
 import java.util.Properties;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-//bu arada ben daha hala bizim db'nin hangi db olduğundan emin değilim. mysql değilse ne?
-//güzel soru :D abi bi sn bi mysql kuralım açık arkada db demek istedim
 
 /**
- * neyse dur da java db bağlantsına bakalım...
+ * 
  * @author Brainiac
  */
 @ManagedBean(name="user")
 @SessionScoped
 public class User {
-//aslında zaten onu yapacağız. fakat bundan önce bi db'yi açmamız lazım ki set edilen değerleri db'ye yazalım. ben mi yanlış anlıyorum?
-    //tamam kafandakini bi yapalım.. senin dediğini yapalım bi. connectionu açıp içine de veri kaydedemez miyiz aynı metodda?? yapabilliriz evet.
-    //üstad java kodlarını metodun içine yazmamız lazım.. farketmez db bağlantısını burada da açabiliriz. benim bildiğim..bak napalım biliyomusn. set metodları çalışıyo şuanki örnekte.yani kaydet butonuna basınca set metodunu kullanıyo.bitanesinin içine user kaydı koyalım orada çalışssın
+
     
     private int id;
     private String isim;
@@ -40,7 +36,7 @@ public class User {
        /* Connection conn;
         Properties connectionProps = new Properties();
         connectionProps.put("username", "root");
-        connectionProps.put("password", "omer1996");//yapalım bişeyler :)
+        connectionProps.put("password", "omer1996");
         String name="Jerome Dcruz";
         String contactno="9773523568";
         Statement stmt=(Statement)conn.createStatement();
